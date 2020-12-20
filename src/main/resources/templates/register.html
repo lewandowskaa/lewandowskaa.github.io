@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Usługi groomerskie | DogSky</title>
+    <meta name="description" content="Groomer">
+    <meta name="keywords" content="groomer,pies,fryzjer">
+    <meta name="author" content="Anita Lewandowska">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=ABeeZee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+</head>
+<body id="page-top">
+
+<!-- Nawigacja -->
+<nav class="navbar navbar-dark bg-own navbar-expand-sm justify-content-center sticky-top" id="mainNav">
+    <div class="container-2">
+
+        <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+                type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item toto" id="dog">
+                    <div style="height: 100%; width: 100%">
+                        <a href="/home" style="height: 100%; width: 100%">
+                            <img src="img/logo-dogsky.png" alt="logo" style="width: 100%; height: 100%">
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="/home" class="nav-link navbar-brand">Start</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/login" class="nav-link">Logowanie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active">Rejestracja</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Naglowek -->
+<header class="mhead ">
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded" style="margin-left: 30%; margin-right: 30%">
+                <form method="post" action="/register">
+                    <div class="form-group has-default">
+                        <div class="input-group">
+                            <input name="firstName" class="form-control" placeholder="Imie..." required
+                                   type="text" minlength="3" maxlength="30">
+                        </div>
+                    </div>
+
+                    <div class="form-group has-default">
+                        <div class="input-group">
+                            <input name="lastName" type="text" class="form-control"
+                                   placeholder="Nazwisko..." required minlength="3" maxlength="20">
+                        </div>
+                    </div>
+
+                    <div class="form-group has-default">
+                        <div class="input-group">
+                            <input name="email" type="email" class="form-control"
+                                   placeholder="Email..." required minlength="3" maxlength="20">
+                        </div>
+                    </div>
+
+                    <div class="form-group has-default">
+                        <div class="input-group">
+                            <input name="password1" type="password" class="form-control"
+                                   placeholder="Hasło..." required minlength="5" maxlength="20">
+                        </div>
+                    </div>
+
+                    <div class="form-group has-default">
+                        <div class="input-group">
+                            <input name="password2" type="password" class="form-control"
+                                   placeholder="Potwierdź hasło..." required minlength="5" maxlength="20">
+                        </div>
+                    </div>
+
+                    <div th:if="${message} != null" th:class="'my-4 alert alert-' + ${messageType}"
+                         th:text="${message}" role="alert">
+                    </div>
+
+                    <div class="intro-button mx-auto">
+                        <button class="btn btn-primary btn-xl" type="submit">Zarejestruj</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+    let dog = document.getElementById('dog');
+
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+        // true for mobile device
+        dog.style.display = 'none';
+    }else{
+        // false for not mobile device
+        dog.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

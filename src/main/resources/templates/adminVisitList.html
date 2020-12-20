@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Usługi groomerskie | DogSky</title>
+    <meta name="description" content="Groomer">
+    <meta name="keywords" content="groomer,pies,fryzjer">
+    <meta name="author" content="Anita Lewandowska">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=ABeeZee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+</head>
+<body id="page-top">
+
+<!-- Nawigacja -->
+<nav class="navbar navbar-dark bg-own navbar-expand-sm justify-content-center sticky-top" id="mainNav">
+    <div class="container-2">
+
+        <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+                type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active">Lista Wizyt</a>
+                </li>
+                <li class="nav-item" th:if="${session.email != null}">
+                    <a href="/logout" class="nav-link">Wyloguj</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="page-section" id="uslugi">
+    <div class="container py-4">
+        <div class="row no-gutters">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase">Lista Wizyt</h2>
+            </div>
+
+            <div style="width: 100%; height: 100%">
+                <table class="table table-striped" style="margin-top: 3%">
+                    <tbody>
+                    <tr>
+                        <th>Imie</th>
+                        <th>Nazwisko</th>
+                        <th>Email</th>
+                        <th>Data</th>
+                        <th>Godzina</th>
+                        <th>Koszt</th>
+                        <th>Czas</th>
+                        <th></th>
+                    </tr>
+                    <tr th:each="visit: ${visitList}">
+                        <th th:text="${visit.user.firstName}"></th>
+                        <th th:text="${visit.user.lastName}"></th>
+                        <th th:text="${visit.user.email}"></th>
+                        <th th:text="${visit.date}"></th>
+                        <th th:text="${visit.startTime}"></th>
+                        <th th:text="${visit.totalCost} + ' zł'"></th>
+                        <th th:text="${visit.totalTime} + 'h'"></th>
+                        <th>
+                            <form action="/adminRemoveVisit" method="post">
+                                <button class="btn btn-primary btn-xl" type="submit">
+                                    Anuluj
+                                    <input type="hidden" name="visitId" th:value="${visit.id}">
+                                </button>
+                            </form>
+                        </th>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+    let dog = document.getElementById('dog');
+
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+        // true for mobile device
+        dog.style.display = 'none';
+    }else{
+        // false for not mobile device
+        dog.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

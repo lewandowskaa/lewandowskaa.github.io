@@ -1,0 +1,251 @@
+body {
+    overflow-x: hidden;
+    font-family:  'Abeezee',sans-serif;
+    background-image: url("img/chmury1.jpg");
+    background-color: #f0d292;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    color: rgba(250, 231, 212, 0.979);   
+}
+h3 {
+    padding-top: 10px;
+}
+#omnie .container,
+#uslugi .container,
+#cennik .container,
+#produkty .container,
+#kontakt .container,
+#informacje .container
+{
+    background-color: rgba(9, 95, 223, 0.678);   
+    margin-bottom: 25px;
+}
+
+#omnie .container{
+    margin-top:25px;
+}
+/*Górny pasek szukania i logowania*/
+
+ /*Nawigacja */
+nav a {
+    color: #fff0ce;
+    text-decoration: solid;
+    display:block;/*zmieniam z block*/
+   /*justify-content:space-around;*/
+    /*min-width: 50px;*/
+    max-height: 44px;
+
+    /*border:dotted; Pojedyncze elementy*/
+}
+
+nav a:hover{
+    text-decoration: none;
+}
+.navbar {
+    min-height: 80px;
+    text-align: center;
+    border:solid; /*najbardziej zewnętrzny*/
+    background-color: rgba(5, 17, 185, 0.61); 
+}
+.navbar-nav{
+    /*border:solid; środkowy*/
+  
+    width:90vw;      
+}
+.nav-item{
+    /*border:solid;*/
+    width: 230px;
+}
+/*----------------------------------------------------*/
+/* Header */
+header.mhead {
+	text-align: center;
+    color: #ffffff;
+	background-image: url("img/spwest.jpg");
+	
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 50% 50%;
+	background-size: cover;
+    height:90vh;
+    border:solid;	
+}
+header.mhead .intro-text {    
+    align-content: center;
+    margin-top:25vh;
+    margin-bottom:20vh;    
+}
+header.mhead .intro-text .intro-lead-in {
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 70px;
+    font-style: italic;
+    margin-bottom: 50px;
+    margin-top:50px;
+    /*border:solid 3px;*/
+   background-color:rgba(0, 0, 0, 0.459);
+   padding:20px;
+}
+/*
+@media (min-width: 768px) {
+    header.mhead .intro-text {
+        padding-top: 125px;
+        padding-bottom: 250px;
+    }
+
+    header.mhead .intro-text .intro-lead-in {
+        font-size: 40px;
+        font-style: italic;
+        line-height: 40px;
+        margin-bottom: 25px;
+    }
+
+    header.mhead .intro-text .intro-heading {
+        font-size: 55px;
+        font-weight: 700;
+        line-height: 50px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 767px){
+    header.mhead .intro-text {
+        padding-top: 110px;
+        padding-bottom: 250px;
+    }
+    header.mhead .intro-text .intro-lead-in {
+        font-size: 40px;
+        font-style: italic;
+        line-height: 50px;
+        margin-bottom: 25px;
+    }
+    header.mhead .intro-text .intro-heading {
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 75px;
+        margin-bottom: 50px;
+    }
+}
+*/
+section#omnie .section-heading ,
+section#uslugi .section-heading ,
+section#cennik .section-heading ,
+section#produkty .section-heading ,
+section#kontakt .section-heading,
+section#informacja .section-heading
+{
+    color: rgb(247, 243, 238);
+    padding-bottom: 10px;
+    font-size: 40px;
+}
+/*----------------------------------------------*/
+/* O nas*/
+.wiecej {
+    padding: 5px;	
+    margin:20px;
+    /*border-style: dotted dashed solid double;*/
+}
+.bold {
+    font-weight: 850;
+    color: rgba(250, 231, 212, 0.979);  
+}
+/*------------------------------------------*/
+/* Usługi */
+
+
+#uslugi  img{   
+	width: 100%;
+	height: 100px;
+    object-fit: contain;
+    overflow: hidden;
+}		
+	  .one-skill {
+		background-color: rgba(226, 221, 197, 0.445);
+		min-height: 120px;
+        position: relative;
+        transition: all 0.5s ease-in-out;
+        border:solid;
+        
+      }  
+      .one-skill:hover{
+        -webkit-transform: scale(0.95) rotate(5deg);
+	    -ms-transform: scale(0.95) rotate(5deg);
+	    transform: scale(0.95) rotate(5deg);
+
+      }
+	  @media screen and (max-width: 768px) {
+		.one-skill {margin-bottom: 15px;}
+      }
+
+/* cennik */
+
+#cennik img{
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}  
+.one-cennik{
+    background-color: rgba(206, 187, 95, 0.445);
+    min-height: 100px;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+ }
+ .one-cennik:hover{
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9); 
+ }
+
+/* Formularz kontaktowy */
+.btn-color {
+    background-color: rgb(255, 255, 255);
+    color: rgb(43, 15, 165);
+}
+
+/*section#kontakt {
+    background-color: #8d6206cb;
+}
+*/
+section#kontakt .form-group {
+    margin-bottom: 20px;
+}
+
+section#kontakt .form-group input,
+section#kontakt .form-group textarea {
+    padding: 15px;
+}
+
+section#kontakt .form-group input.form-control {
+    height: auto;
+}
+
+section#kontakt .form-group textarea.form-control {
+    height: 200px;
+}
+
+section#kontakt ::-webkit-input-placeholder {
+    font-weight: 600;
+    color: rgb(104, 87, 71)
+}
+section#kontakt :-moz-placeholder {
+    font-weight: 600;
+    color: #e8ecf0;
+}
+section#kontakt ::-moz-placeholder {
+    font-weight: 600;
+    color: #e8ecf0;
+}
+section#kontakt :-ms-input-placeholder {
+    font-weight: 600;
+    color: #e8ecf0;
+}
+#clearButton,
+#sendMessageButton{
+    width: 10vw;
+}
+/* Footer */
+
+#footer .container{
+    background-color:rgba(5, 17, 185, 0.918);
+    color: rgb(255, 240, 227);
+}

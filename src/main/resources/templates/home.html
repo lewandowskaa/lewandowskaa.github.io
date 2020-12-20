@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Usługi groomerskie | DogSky</title>
+    <meta name="description" content="Groomer">
+    <meta name="keywords" content="groomer,pies,fryzjer">
+    <meta name="author" content="Anita Lewandowska">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=ABeeZee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+</head>
+<body id="page-top">
+
+<!-- Nawigacja -->
+<nav class="navbar navbar-dark bg-own navbar-expand-sm justify-content-center sticky-top" id="mainNav">
+    <div class="container-2">
+        <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+                type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav mx-auto ">
+                <li class="nav-item toto" id="dog">
+                    <div style="height: 100%; width: 100%">
+                        <a href="/home" style="height: 100%; width: 100%">
+                            <img src="img/logo-dogsky.png" alt="logo" style="width: 100%; height: 100%">
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link active navbar-brand">Start</a>
+                </li>
+                <li class="nav-item">
+                    <div style="height: 100%; width: 100%">
+                        <a href="#omnie" class="nav-link">O nas</a>
+                    </div>
+                </li>
+                <li class="nav-item ">
+                    <a href="#uslugi" class="nav-link">Usługi</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#cennik" class="nav-link">Cennik / Rezerwacja</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#informacje" class="nav-link">Informacje</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#kontakt" class="nav-link">Kontakt</a>
+                </li>
+                <li class="nav-item" th:if="${session.email != null}">
+                    <a href="/visitList" class="nav-link">Wizyty</a>
+                </li>
+                <li class="nav-item" th:if="${session.email == null}">
+                    <a href="/login" class="nav-link">Logowanie</a>
+                </li>
+                <li class="nav-item" th:if="${session.email == null}">
+                    <a href="/register" class="nav-link">Rejestracja</a>
+                </li>
+                <li class="nav-item" th:if="${session.email != null}">
+                    <a href="/logout" class="nav-link">Wyloguj</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Naglowek -->
+<header class="mhead ">
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-lead-in">
+                Salon Groomerski<br>
+                -DogSky-
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Zawartosc -->
+<!-- o nas -->
+<section class="page-section" id="omnie">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h3 class="section-heading text-uppercase">O nas</h3>
+            </div>
+        </div>
+
+        <br/>
+
+        <div class="row">
+            <div class="col-sm-6 text-center">
+                <div class="wiecej">
+                    <p>
+                        Salon groomerski "DogSky" to profesjonalnie przeszkolony i doświadczony zespół
+                        pracowników z
+                        pasją
+                        podchodzących do swoich obowiązków.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Kochamy zwierzęta i staramy się Państwa pupilom zapewnić u nas jak najbardziej
+                        komfortowe i bezstresowe warunki pobytu.
+                        Profesjonalnie przeprowadzona usługa w połączeniu z wysoką empatią dla zwierzaczków
+                        - to nasza
+                        dewiza przewodnia.
+                        Zostawiacie Państwo swoich przyjaciół w najlepszych rękach.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 text-center">
+                <img src="img/pieski-onas.jpg" alt="Pieski" width="240px" height="180px">
+                <br>
+                <br>
+                <span class="bold">W salonie oferujemy: strzyżenie, trymowanie, kąpiele, pakiety oraz inne zabiegi higieniczne dla każdego psa.</span><br/>
+            </div>
+
+            <div class="col-sm-6 text-center">
+                <div class="wiecej">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- uslugi -->
+
+<section class="page-section" id="uslugi">
+    <div class="container py-4">
+        <div class="row no-gutters">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase">Usługi</h2><br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 text-center shadow-lg p-4 mb-4 bg-brown">
+                <div class="one-skill pt-3">
+                    <div class="tech">
+                        <a>
+                            <br><img src="img/strzyg.png" alt="Strzyżenie"></a>
+                        <h4>Strzyżenie</h4>
+                        <p>Każde strzyżenie psa jest poprzedzane dokładnym wyczesaniem czworonoga.Polega na usunięciu
+                            starego włosa, co w dużym stopniu eliminuje gubienie sierści, za razem poprawia kondycję i
+                            strukturę okrywy. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="one-skill pt-3">
+
+                    <div class="tech">
+                        <a>
+                            <div class="photo1">
+                                <img src="img/trymko.png" alt="Trymowanie"></a>
+                    </div>
+                    <h4>Trymowanie</h4>
+                    <p>Zabieg dotyczy ras szorstkowłosych. Poprawia jakość sierści i kolor oraz pozwala utrzymać skórę w
+                        właściwej kondycji. Regularne wizyty co 1-2 miesiące ułatwią codzienną pielęgnację. Strzyżenie
+                        psów wykonywane jest według wzorca FCI lub życzenia.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center shadow-lg p-4 mb-4 bg-brown">
+            <div class="one-skill pt-3">
+
+                <div class="tech">
+                    <a>
+                        <br><img src="img/myciu.png" alt="Mycie"></a>
+                    <h4>Kąpiel</h4>
+                    <p>Oferujemy kąpiele odżywcze i lecznicze. Twój czworonożny przyjaciel zostanie u nas wykąpany przy
+                        użyciu odpowiednio dobranych do jego rodzaju szaty, oraz skóry profesjonalnych kosmetyków.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-4 text-center shadow-lg p-4 mb-4 bg-brown">
+            <div class="one-skill pt-3">
+
+                <div class="tech">
+                    <a>
+                        <br><img src="img/spa-pies.png" alt="Pakiet"></a>
+                    <h4>Pakiety</h4>
+                    <p>Zapewnij swojemu psu pełen pakiet odświeżenia.W usłudze do wyboru jest trymowanie/strzyżenie,
+                        kąpiel w szamponie dobranym do włosa, modelowanie oraz ogólna kosmetyka.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="one-skill pt-3">
+
+                <div class="tech">
+                    <a>
+                        <div class="photo1">
+                            <img src="img/lapka.png" alt="Pielegnacja pazurkow">
+                    </a>
+                </div>
+                <h4>Pielęgnacja pazurków</h4>
+                <p>Za długie pazurki mogą powodować dyskomfort oraz istnieje ryzyko złamania lub rozwartwienia pazurka.
+                    W naszym salonie oferujemy psi manicure i pedicure profesjonalnymi cążkami</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 text-center shadow-lg p-4 mb-4 bg-brown">
+        <div class="one-skill pt-3">
+
+            <div class="tech">
+                <a>
+                    <br><img src="img/podszerstek.png" alt="Usuwanie podszerstka"></a>
+                <h4>Usuwanie podszerstka</h4>
+                <p>Dzięki wykonaniu tego zabiegu ograniczamy linienie psa. Należy wykonywać go regularnie, również w
+                    domu rzed dokładne wyczesanie psiaka do samej skóry(Palcami lub nożami do trymowania). </p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 text-center shadow-lg p-4 mb-4 bg-brown">
+            <div class="one-skill pt-3">
+
+                <div class="tech">
+                    <a>
+                        <br><img src="img/czyszczenie-uszu.png" alt="Czyszczenie uszu"></a>
+                    <h4>Czyszczenie uszu</h4>
+                    <p>Wykonujemy czyszczenie uszu specjalnymi płynami oraz usuwamy zbędne włosy pudrem
+                        trymerskim.Pielęgnacja uszu pozwala uniknać zapaleń oraz pogorszenia słuchu pieska.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="one-skill pt-3">
+
+                <div class="tech">
+                    <a>
+                        <div class="photo1">
+                            <img src="img/pies-oczy.png" alt="Pielegnacja oczu">
+                    </a>
+                </div>
+                <h4>Pielęgnacja oczu</h4>
+                <p>Należy pamiętać o regularnej kosmetyce oczu do której zalicza się przycinanie włosków w okolicach
+                    oczu oraz przemywanie specjalnym płynem.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 text-center shadow-lg p-4 mb-4 bg-brown">
+        <div class="one-skill pt-3">
+
+            <div class="tech">
+                <a>
+                    <br><img src="img/adapt.png" alt="Wizyta adaptacyjna"></a>
+                <h4>Wizyta adaptacyjna</h4>
+                <p>Pierwsza wizyta w salonie groomerskim ma kluczowe znaczenie, aby psiak zawsze dobrze kojarzył wizyty.
+                    Zapraszamy na bezpłatne pierwsze odwiedziny, na której bawimy się razem z pieskiem, oswajamy z
+                    nowymi czynnościami i sprawdzamy jak na nie reaguje np. na suszarkę lub maszynkę.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+
+<!-- cennik/rezerwacja -->
+<section class="page-section" id="cennik">
+    <div class="container py-4">
+        <div class="row ">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase">Cennik/Rezerwacja</h2><br>
+            </div>
+        </div>
+
+        <h2>> Wybierz rasę psa</h2><br>
+
+        <div class="row">
+            <div class="col-md-4 text-center" th:each="dog : ${dogList}">
+                <a th:href="'/orderVisit?dogId=' + ${dog.id}" style="color: white">
+                    <h4 th:text="${dog.type}"></h4>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section" id="informacje">
+    <div class="container py-4">
+        <div class="row ">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase">Aktualne Informacje</h2><br>
+            </div>
+            <div class="col-lg-6 text-left">
+                <h4>
+                    <p> Na czas pandemii:<br>
+                        - Proszę pamiętać o zasłanianiu ust i nosa.<br>
+                        - Po przybyciu na wizytę prosimy oczekiwać na zaproszenie na zewnątrz.<br>
+                        - Zachęcamy do płatności przez internet lub kartą płatniczą.
+                        <br>
+                    </p>
+                </h4>
+            </div>
+            <div class="col-lg-6 text-left">
+                <h4>
+                    <p>
+                        - Wszystkie zabiegi wykonywane są bez używania środków uspokajających lub usypiających. <br>
+                        - Prosimy zabrać ze sobą kaganiec, jeśli piesek jest niespokojny lub agresywny.<br>
+                        - Mamy różne smakołyki dla psów, dlatego nie ma potrzeby zabierania swoich.<br>
+                        - Dbając o komfort czworonoga proszę nie karmić go tuż przed wizytą
+                    </p>
+                </h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Kontakt -->
+<section class="page-section" id="kontakt">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase">Kontakt </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col md-4 text-center">
+                <h5>Zadzwoń lub napisz</h5>
+                (+48)222 333 987<br>
+                E-mail:<br>
+                dog-sky@wp.pl
+            </div>
+            <div class="col md-4 text-center">
+                <h5>Godziny otwarcia:</h5>
+                -Poniedziałek-piątek:<br>
+                10:00-20:00<br>
+                -Sobota:<br>
+                10:00-15:00
+            </div>
+            <div class="col md-4 text-center">
+                <h5>Adres:</h5>
+                ul.Hery 89<br>
+                01-355 Warszawa<br>
+                Bemowo
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col md-6 text-center">
+                <h3>Formularz kontaktowy</h3>
+            </div>
+            <div class="col md-6 text-center">
+                <h3>Mapa dojazdu:</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="/sendEmail" method="post">
+                    <div class="row" style="padding-left: 10%">
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input class="form-control form-control-sm" type="text" placeholder="Imie"
+                                       name="firstName" minlength="3" maxlength="20" required>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control form-control-sm" type="email"
+                                       placeholder="E-mail" name="email" minlength="3" maxlength="20" required>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control form-control-sm" type="tel" id="phone" name="phone"
+                                       pattern="[0-9]{9}" placeholder="Telefon 123456789"
+                                       required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                        <textarea class="form-control form-control-sm"
+                                                  placeholder="Wiadomość" name="context" minlength="15" maxlength="5000"
+                                                  required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <iframe width="100%" height="100%" id="gmap_canvas"
+                                    src="https://maps.google.com/maps?q=warszawa%20hery%2089&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <a href="https://embedgooglemap.net/139/"></a>
+                        </div>
+                    </div>
+
+                    <div class="row" style="padding-left: 10%">
+                        <div class="col-3 text-left">
+                            <button class="btn btn-color btn-sm" type="submit" >Wyślij</button>
+                        </div>
+                        <div class="col-3 text-left">
+                            <button id="clearButton" class="btn btn-color btn-sm" type="reset" >
+                                Wyczyść
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<section class="page-section" id="footer">
+    <div class="container py-2">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <a href="https://www.facebook.com" target="_blank"><img src="img/fb-white.png" width="60" height="60"
+                                                                        alt="Facebook"></a>
+            </div>
+            <br><br>
+            <div class="col-sm-12  mb-2 text-center">
+                <p>Copyrights @ 2020 Anita Lewandowska</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    let dog = document.getElementById('dog');
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        // true for mobile device
+        dog.style.display = 'none';
+    } else {
+        // false for not mobile device
+        dog.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
